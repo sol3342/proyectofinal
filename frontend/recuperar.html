@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogMe - Recuperar contraseña</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="login-background">
+
+<div class="login-container">
+
+    <h1 class="logo">Recuperar <span>Contraseña</span></h1>
+
+    <form id="recuperarForm" class="login-form">
+
+        <input class="input" type="email" id="emailRec" placeholder="Tu correo Gmail" required>
+
+        <button type="submit" class="btn-login">Obtener pista</button>
+    </form>
+
+    <div id="pistaContainer" style="display:none;">
+        <p id="textoPista" style="color:white; margin-top:20px;"></p>
+
+        <input class="input" type="text" id="respuestaRec" placeholder="Escribe tu respuesta">
+
+        <button id="btnValidar" class="btn-login">Validar respuesta</button>
+    </div>
+
+    <div id="nuevaPassContainer" style="display:none;">
+        <input class="input" type="password" id="newPass" placeholder="Nueva contraseña" required>
+        <button id="btnCambiarPass" class="btn-login">Cambiar contraseña</button>
+    </div>
+
+</div>
+
+<script src="js/recuperar.js"></script>
+
+</body>
+</html>

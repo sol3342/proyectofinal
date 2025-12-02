@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogMe - Registro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="login-background">
+
+<div class="login-container">
+
+    <h1 class="logo">Blog<span>Me</span></h1>
+
+    <div class="tabs">
+        <button class="tab active">Crear cuenta</button>
+    </div>
+
+    <form id="registroForm" class="login-form">
+
+        <input class="input" type="text" id="nombre" placeholder="Nombre" required>
+        <small class="error-msg" id="error-nombre"></small>
+
+        <input class="input" type="text" id="apellidos" placeholder="Apellidos" required>
+        <small class="error-msg" id="error-apellidos"></small>
+
+        <input class="input" type="date" id="fecha" required>
+        <small class="error-msg" id="error-fecha"></small>
+
+        <input class="input" type="email" id="email" placeholder="Correo Gmail" required>
+        <small class="error-msg" id="error-email"></small>
+
+        <input class="input" type="password" id="password" placeholder="Contraseña (8 caracteres, 1 símbolo)" required>
+        <small class="error-msg" id="error-password"></small>
+
+        <select id="pista" class="input select-glass" required>
+            <option value="" disabled selected>Pista de seguridad</option>
+            <option value="mascota">Nombre de tu mascota</option>
+            <option value="color">Color favorito</option>
+            <option value="ciudad">Ciudad donde naciste</option>
+        </select>
+        <small class="error-msg" id="error-pista"></small>
+
+        <input class="input" type="text" id="respuesta" placeholder="Tu respuesta" required>
+        <small class="error-msg" id="error-respuesta"></small>
+
+        <button type="submit" class="btn-login">Crear cuenta</button>
+        <a href="login.html" class="switch-link">¿Ya tienes cuenta? Iniciar sesión</a>
+
+    </form>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
