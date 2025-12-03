@@ -5,6 +5,7 @@ frontend/node_modules/
 # Entorno
 backend/.env
 frontend/.env
+.env
 
 # Archivos del sistema
 .DS_Store
@@ -12,6 +13,7 @@ Thumbs.db
 
 # Vercel
 .vercel/
+.vscode/
 
 # Logs
 *.log
