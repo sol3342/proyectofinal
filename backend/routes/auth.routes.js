@@ -5,7 +5,7 @@ import {
     getPista,
     validarRespuesta,
     cambiarPassword
-} from "../controllers/authController.js";
+} from "../../backend/controllers/authController.js";
 
 const router = express.Router();
 
