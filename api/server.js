@@ -1,35 +1,33 @@
 import express from "express";
 import mongoose from "mongoose";
+import path from "path";
+import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import cors from "cors";
 
-// Cargar .env
 dotenv.config();
 
-// Crear app
 const app = express();
-
 app.use(express.json());
 app.use(cors());
 
-// Importar rutas (OJO CON LOS NOMBRES)
-import userRoutes from "./routes/userRoutes.js";
-import postRoutes from "./routes/postRoutes.js";
-import authRoutes from "./routes/auth.routes.js";      // ✔ CORRECTO
-import commentRoutes from "./routes/comments.routes.js";
-import profileRoutes from "./routes/profile.routes.js";
+// Rutas API
+import authRoutes from "./routes/auth.routes.js";
+app.use("/api/auth", authRoutes);
 
-// Usar rutas
-app.use("/api/users", userRoutes);
-app.use("/api/posts", postRoutes);
-app.use("/api/auth", authRoutes);                      // ✔ NECESARIO
-app.use("/api/comments", commentRoutes);
-app.use("/api/profile", profileRoutes);
+// --- SERVIR FRONTEND ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Conectar a MongoDB
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/index.html"));
+});
+
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB conectado"))
   .catch(err => console.log(err));
 
-// Exportar para Vercel
-export default app;
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log("Servidor funcionando en puerto", port));
