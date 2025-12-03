@@ -1,5 +1,5 @@
 // URL del backend (tu API real en Vercel)
-const API_URL = "https://blogme-pxo7r71ml-sols-projects-e58f8ab7.vercel.app";
+const API_URL = "https://blogme-liard.vercel.app/";
 
 document.addEventListener("DOMContentLoaded", () => {
 

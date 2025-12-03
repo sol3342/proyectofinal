@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "vercel-build": "echo 'No build needed'"
+  },
+  "dependencies": {
+    "serverless-http": "^4.0.0"
   }
 }
